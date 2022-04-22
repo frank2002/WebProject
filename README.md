@@ -1,2 +1,2 @@
 # WebProject
-A sinple web project for CSE104 
+A simple web project for CSE104 
