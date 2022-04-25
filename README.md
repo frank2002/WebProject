@@ -1,5 +1,8 @@
 # CSE104 Web programming - Fianl Project
-A simple web project for CSE104 笑死了
+CSE104 is the courses held by Professor Rohmer Damien at Ecole Polytechnique. And this is the final project related to this course. In this project, we tried to create an integrated website by using HTML, CSS and Javascript, with a recreation of the classic trivia game with those tools.
+
+## Professors
+- [Rohmer Damien](https://imagecomputing.net/damien.rohmer/)
 
 ## Contributors
 - [Junyuan Wang](https://github.com/frank2002), [Yubo Cai](https://github.com/yubocai-poly)
