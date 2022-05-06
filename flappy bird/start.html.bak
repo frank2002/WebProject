@@ -22,7 +22,7 @@
 
         <section class="top-bar-section">
             <ul class="right">
-                <li class="active"><a href="../index.html">Home</a></li>
+                <li class="active"><a href="../menu/index.html">Home</a></li>
                 <li><a href="#">Flappy Bird</a></li>
                 <li>
                     <a href="../2048/index.html">2048</a>
