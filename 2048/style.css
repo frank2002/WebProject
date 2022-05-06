@@ -10,7 +10,7 @@ h1 {
   line-height: 50%;
 }
 
-#new {
+#new, #cheat{
   display: block;
   text-align: center;
   width: 100px;
@@ -21,7 +21,7 @@ h1 {
   border-radius: 10px;
 }
 
-#new:hover {
+#new:hover #cheat:hover{
   background-color: #9a612d;
 }
 
