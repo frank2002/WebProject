@@ -7,6 +7,7 @@ let chessboard = new Array([0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]);
 let score = 0;
 let isWin = false;
 let isLose = false;
+let high_score = 0
 
 
 
@@ -32,6 +33,11 @@ function display(){
     }
     /* display score */
     document.getElementById("score").innerHTML = score;
+    /* display high score */
+    if(score > high_score){
+        high_score = score;
+        document.getElementById("hscore").innerHTML = high_score;
+    }
 }
 
 function getRandomInt(min, max) {
@@ -68,7 +74,7 @@ function add(){
     }
     if(is_full){
         isLose = true;
-        alert("You Lose!");
+        alert("You Lose! Please click the 'New Game' button to start a new game.");
     }
 }
 
@@ -237,11 +243,11 @@ function move(event){
     let e=window.event||event;
     if(check_lose()){
         isLose = true;
-        alert("You Lose!");
+        alert("You Lose! Please click the 'New Game' button to start a new game.");
     }
     if(check_win()){
         isWin = true;
-        alert("You Win!");
+        alert("You Win! Please click the 'New Game' button to start a new game.");
     }  
     switch(e.keyCode){
         case 37: //left;
@@ -312,7 +318,8 @@ function check_win(){
 
 function cheat(){
     /* cheat */
-    chessboard[0][0] = 2048;
+    chessboard[0][0] = 1024;
+    chessboard[0][1] = 1024;
     display();
     if(check_win()){
         isWin = true;
