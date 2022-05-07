@@ -1,13 +1,17 @@
 header {
   display: block;
   text-align: center;
+  margin:30px;
 }
 
 h1 {
+
+  top:50px;
   font-size: 50px;
   text-align: center;
   font-weight: bold;
   line-height: 50%;
+  margin:20px;
 }
 
 #new, #cheat{
@@ -31,6 +35,7 @@ header p {
 
 
 .grid-container {
+  display: block;
   width: 430px;
   height: 430px;
   padding: 20px;
@@ -40,6 +45,7 @@ header p {
 
   border-radius: 10px;
   position: relative;
+  box-sizing: content-box;
 }
 
 .grid-line {
@@ -111,3 +117,10 @@ span {
 #cheat {
   margin-top: 20px;;
 }
+
+
+
+.img1 {
+  height: 40px;
+}
+
