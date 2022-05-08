@@ -90,7 +90,15 @@ function oneclick(event) {
         alert("I would recommend you to choose another place, since this place is already occupied !");
         return;
     }
+    
+    if(check_win(i, j)){
+        alert("Congratulations, you win! When you click Yes, the page will be REFRESHED and start a NEW game !");
+        window.location.reload();
+        
+        
+    }
 
+    /*
     for (var k = 0; k < count; k++) {
         if (wins[i][j][k]) {
             myWin[k]++;
@@ -101,6 +109,8 @@ function oneclick(event) {
             }
         }
     }
+    */
+
 }
 
 function turns(event) {
@@ -173,4 +183,121 @@ let computerWin = [];
 for (var i = 0; i < count; i++) {
     myWin[i] = 0;
     computerWin[i] = 0;
+}
+
+
+
+
+function check_win(x,y){
+    /* check vertical */
+    c = chessBoard[x][y];
+    is_end=false;
+    count = 1;
+    index=1;
+    while(!is_end){
+        
+        if(chessBoard[x][y-index]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+    is_end=false;
+    index=1;
+    while(!is_end){
+        if(chessBoard[x][y+index]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+    
+    if(count>=5){
+        return true;
+    }
+    /* check horizontal */
+    c = chessBoard[x][y];
+    is_end=false;
+    count = 1;
+    index=1;
+    while(!is_end){
+        if(chessBoard[x-index][y]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+    is_end=false;
+    index=1;
+    while(!is_end){
+        if(chessBoard[x+index][y]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+    
+    if(count>=5){
+        return true;
+    }
+    /* check diagonal */
+    c = chessBoard[x][y];
+    is_end=false;
+    count = 1;
+    index=1;
+    while(!is_end){
+        if(chessBoard[x-index][y-index]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+    is_end=false;
+    index=1;
+    while(!is_end){
+        if(chessBoard[x+index][y+index]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+
+    if(count>=5){
+        return true;
+    }
+    c = chessBoard[x][y];
+    is_end=false;
+    count = 1;
+    index=1;
+    while(!is_end){
+        if(chessBoard[x-index][y+index]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+    is_end=false;
+    index=1;
+    while(!is_end){
+        if(chessBoard[x+index][y-index]==c){
+            count++;
+            index++;
+        }else{
+            is_end=true;
+        }
+    }
+    if(count>=5){
+        return true;
+    }
+    return false;
+
+
+    
 }
