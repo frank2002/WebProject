@@ -194,25 +194,31 @@ function check_win(x,y){
     is_end=false;
     count = 1;
     index=1;
+    
     while(!is_end){
-        
-        if(chessBoard[x][y-index]==c){
+            
+        if(y-index<0||chessBoard[x][y-index]!=c){
+            is_end=true;
+            
+        }else if(chessBoard[x][y-index]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
+        
     }
+    
     is_end=false;
     index=1;
+    
     while(!is_end){
-        if(chessBoard[x][y+index]==c){
+        if(y+index<0||chessBoard[x][y+index]!=c){
+            is_end=true;
+            
+        }else if(chessBoard[x][y+index]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
-    }
+    }    
     
     if(count>=5){
         return true;
@@ -222,25 +228,30 @@ function check_win(x,y){
     is_end=false;
     count = 1;
     index=1;
+
     while(!is_end){
-        if(chessBoard[x-index][y]==c){
+        if(x-index<0||chessBoard[x-index][y]!=c){
+            is_end=true;
+
+        }else if(chessBoard[x-index][y]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
     }
+
     is_end=false;
     index=1;
+
     while(!is_end){
-        if(chessBoard[x+index][y]==c){
+        if(x+index<0||chessBoard[x+index][y]!=c){
+            is_end=true;
+
+        }else if(chessBoard[x+index][y]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
     }
-    
+
     if(count>=5){
         return true;
     }
@@ -249,54 +260,69 @@ function check_win(x,y){
     is_end=false;
     count = 1;
     index=1;
+
     while(!is_end){
-        if(chessBoard[x-index][y-index]==c){
+        if(x-index<0||y-index<0||chessBoard[x-index][y-index]!=c){
+            is_end=true;
+
+        }else if(chessBoard[x-index][y-index]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
     }
+
     is_end=false;
     index=1;
+
     while(!is_end){
-        if(chessBoard[x+index][y+index]==c){
+        if(x+index<0||y+index<0||chessBoard[x+index][y+index]!=c){
+            is_end=true;
+            
+        }else if(chessBoard[x+index][y+index]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
     }
 
     if(count>=5){
         return true;
     }
+    /* check diagonal */
+
     c = chessBoard[x][y];
     is_end=false;
     count = 1;
     index=1;
+
     while(!is_end){
-        if(chessBoard[x-index][y+index]==c){
+        if(x-index<0||y+index<0||chessBoard[x-index][y+index]!=c){
+            is_end=true;
+
+        }else if(chessBoard[x-index][y+index]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
     }
+
     is_end=false;
     index=1;
+
     while(!is_end){
-        if(chessBoard[x+index][y-index]==c){
+        if(x+index<0||y-index<0||chessBoard[x+index][y-index]!=c){
+            is_end=true;
+
+        }else if(chessBoard[x+index][y-index]==c){
             count++;
             index++;
-        }else{
-            is_end=true;
         }
     }
+
     if(count>=5){
         return true;
     }
     return false;
+    
+    
 
 
     
